@@ -2,10 +2,10 @@
 	path = ThirdParty/imgui
 	url = https://github.com/ocornut/imgui.git
 	branch = "tags/v1.89.9"
-[submodule "ThirdParty\\imgui-SFML"]
-	path = ThirdParty\\imgui-SFML
+[submodule "ThirdParty/imgui-SFML"]
+	path = ThirdParty/imgui-SFML
 	url = https://github.com/SFML/imgui-sfml.git
 	branch = "tags/2.6.0"
-[submodule "ThirdParty\\SFML"]
-	path = ThirdParty\\SFML
+[submodule "ThirdParty/SFML"]
+	path = ThirdParty/SFML
 	url = https://github.com/SFML/SFML.git
