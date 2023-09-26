@@ -1,5 +1,7 @@
 [Dd]ebug/
 [Rr]elease/
 [Bb]uild/
+.cache/
 vcpkg_installed/
 GeomertyLab1.sln
+compile_commands.json
