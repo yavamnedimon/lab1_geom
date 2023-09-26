@@ -1,3 +1,5 @@
 [Dd]ebug/
 [Rr]elease/
 [Bb]uild/
+vcpkg_installed/
+GeomertyLab1.sln
