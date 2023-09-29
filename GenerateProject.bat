@@ -22,8 +22,8 @@ if not exist %BuildMode% (
 cmake%ProjectGenerator% -B %BuildMode% -S . -DCMAKE_BUILD_TYPE=%BuildMode% -DCMAKE_TOOLCHAIN_FILE=%cd%\vcpkg\scripts\buildsystems\vcpkg.cmake
 
 
-if not exist "GeomertyLab1.sln" if exist "%BuildMode%\GeomertyLab1.sln" (
-    mklink GeomertyLab1.sln %BuildMode%\GeomertyLab1.sln
+if not exist "GeomertyLabBase.sln" if exist "%BuildMode%\GeomertyLabBase.sln" (
+    mklink GeomertyLabBase.sln %BuildMode%\GeomertyLabBase.sln
 )
 
 if not exist "compile_commands.json" if exist "%BuildMode%\compile_commands.json" (

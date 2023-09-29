@@ -3,5 +3,5 @@
 [Bb]uild/
 .cache/
 vcpkg_installed/
-GeomertyLab1.sln
+*.sln
 compile_commands.json
