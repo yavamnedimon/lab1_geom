@@ -2,18 +2,10 @@
 
 #include "imgui.h"
 #include "imgui-SFML.h"
-#include "Graphics/RFSprite.h"
-#include "SFML/Graphics/CircleShape.hpp"
 #include "SFML/Graphics/RenderWindow.hpp"
 #include "SFML/Graphics/RenderTexture.hpp"
 #include "SFML/System/Clock.hpp"
 #include "SFML/Window/Event.hpp"
-
-
-float CircleFunc(sf::Vector2f spacePos)
-{
-    return std::powf(1, 2) - std::powf(spacePos.x, 2) - std::powf(spacePos.y, 2);
-}
 
 
 int main()
@@ -26,8 +18,6 @@ int main()
         return -1;
     }
     
-    RFSprite functionCanvas(window.getSize());
-
     while (window.isOpen())
     {
 		static sf::Clock deltaClock;
@@ -40,28 +30,24 @@ int main()
             {
                 window.close();
             }
-            if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Button::Right)
-            {
-            	functionCanvas.Update(&CircleFunc);
-            }
         }
 
         ImGui::SFML::Update(window, deltaClock.restart());
 
-        // ImGui::Begin("Hello, world!");
-        // ImGui::Button("Look at this pretty button");
-        // ImGui::End();
+        ImGui::Begin("Hello, world!");
+
+    	if (ImGui::Button("Look at this pretty button"))
+    		std::cout << "Button pressed\n";
+    	
+		ImGui::Text("Look at this pretty text");
+        ImGui::End();
 
         window.clear();
-        window.draw(functionCanvas);
       
         ImGui::SFML::Render(window);
         window.display();
     }
     ImGui::SFML::Shutdown();
-
-
-	functionCanvas.SaveTo("Canvas.png");
 	
 	return 0;
 }

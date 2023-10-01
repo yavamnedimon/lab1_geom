@@ -3,12 +3,12 @@ setlocal enabledelayedexpansion
 
 pushd %~dp0
 
-set BuildMode="Debug"
+call vcpkg\bootstrap-vcpkg.bat
 
+set BuildMode="Debug"
 if "%~1"=="" (
     echo Use default build mode - %BuildMode%
 )
-
 
 set ProjectGenerator=""
 if not "%~2"=="" (
@@ -19,7 +19,7 @@ if not exist %BuildMode% (
     mkdir %BuildMode%
 )
 
-cmake%ProjectGenerator% -B %BuildMode% -S . -DCMAKE_BUILD_TYPE=%BuildMode% -DCMAKE_TOOLCHAIN_FILE=%cd%\vcpkg\scripts\buildsystems\vcpkg.cmake
+cmake%ProjectGenerator% -B %BuildMode% -S . -DCMAKE_BUILD_TYPE=%BuildMode% -DCMAKE_TOOLCHAIN_FILE=vcpkg\scripts\buildsystems\vcpkg.cmake
 
 
 if not exist "GeomertyLabBase.sln" if exist "%BuildMode%\GeomertyLabBase.sln" (
