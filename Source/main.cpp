@@ -31,8 +31,9 @@ int main()
                 window.close();
             }
         }
-
         ImGui::SFML::Update(window, deltaClock.restart());
+    	
+    	window.clear();
 
         ImGui::Begin("Hello, world!");
 
@@ -41,10 +42,9 @@ int main()
     	
 		ImGui::Text("Look at this pretty text");
         ImGui::End();
-
-        window.clear();
-      
+    	
         ImGui::SFML::Render(window);
+    	
         window.display();
     }
     ImGui::SFML::Shutdown();
