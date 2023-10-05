@@ -10,14 +10,14 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Geometry modeling 1");
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "Geometry modeling 1");
     window.setFramerateLimit(60);
     if (!ImGui::SFML::Init(window))
     {
         std::cout << "ImGui initialization failed\n";
         return -1;
     }
-    
+	
     while (window.isOpen())
     {
 		static sf::Clock deltaClock;
@@ -25,7 +25,7 @@ int main()
         while (window.pollEvent(event))
         {
             ImGui::SFML::ProcessEvent(window, event);
-
+			
             if (event.type == sf::Event::Closed)
             {
                 window.close();
@@ -34,9 +34,9 @@ int main()
         ImGui::SFML::Update(window, deltaClock.restart());
     	
     	window.clear();
-
+		
         ImGui::Begin("Hello, world!");
-
+		
     	if (ImGui::Button("Look at this pretty button"))
     		std::cout << "Button pressed\n";
     	
